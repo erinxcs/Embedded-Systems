@@ -40,10 +40,8 @@
 
 // Enter your Wi-Fi credentials locally; don't post the password.
 
-const char* WIFI_SSID = "YOUR_WIFI_NAME";
-
-const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
-
+const char* WIFI_SSID = "PLDTHOMEFIBRpz926";
+const char* WIFI_PASSWORD = "PLDTWIFIf2b42";
 
 
 TFT_eSPI tft;
