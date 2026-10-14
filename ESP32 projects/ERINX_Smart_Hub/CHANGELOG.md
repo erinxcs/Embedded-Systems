@@ -1,13 +1,46 @@
-# ERINX Smart Hub project development summary
+# Changelog
 
-- **V5.1.3 (final archived):** visible-by-default Wi-Fi password input with SHOW/HIDE toggle; drawn city dropdown chevron; preserved V5.1.2 media/weather features.
-- **V5.1.2:** ESP32-S3 SD_MMC target/header checks and diagnostic probe.
-- **V5.1.1:** PageTypes.h companion header added for Arduino function-prototype parsing.
-- **V5.1:** four-location weather and on-device Wi-Fi scan/connect using NVS.
-- **V5.0:** silent custom EVM video playback.
-- **V4.9:** JPEG photo gallery/slideshow.
-- **V4.6–V4.8:** icon assets and UI refinement.
-- **V4.3–V4.5:** ESP32-S3 architecture and interface optimizations.
-- **Earlier:** ESP32D display, touch, weather, and V2/V3 dashboard prototypes.
+This file summarizes the preserved development releases. Hardware verification status is documented separately in `docs/TESTING_CHECKLIST.md`.
 
-Historical release notes were preserved in `docs/original_notes` without modifying the original source sketches.
+## V5.2 — Wireless File Manager
+
+- Added a responsive browser interface served directly by the ESP32-S3.
+- Added PIN-gated photo and EVM upload, listing, and deletion on the microSD card.
+- Added temporary upload staging and cleanup for interrupted transfers.
+- Added desktop and mobile web UI previews.
+- Retained the V5.1.3 touchscreen, weather, clock, DHT11, gallery, video, and Wi-Fi features.
+
+## V5.1.3 — UI Controls
+
+- Added visible-by-default Wi-Fi password entry with a SHOW/HIDE control.
+- Replaced text-like city selector symbols with drawn chevrons.
+- Preserved the V5.1.2 media, weather, and SD features.
+
+## V5.1.2 — SDMMC Diagnostics
+
+- Added ESP32-S3 SD_MMC target and header checks.
+- Added a dedicated SDMMC board probe sketch.
+
+## V5.1.1 — Compile Fix
+
+- Added `PageTypes.h` beside the sketch to avoid Arduino auto-prototype parsing errors.
+
+## V5.1 — Network and Location
+
+- Added four-location weather selection.
+- Added on-device Wi-Fi scan/connect and Preferences storage.
+
+## V5.0 — Video Player
+
+- Added silent custom EVM video playback.
+
+## V4.3-V4.9
+
+- Migrated the project to ESP32-S3.
+- Added UI optimizations, RGB565 icon assets, and a JPEG photo gallery/slideshow.
+
+## Earlier releases
+
+- Built the ESP32D display, touch, Open-Meteo weather, and V2/V3 dashboard prototypes.
+
+Historical release notes are preserved under `docs/original_notes/`.

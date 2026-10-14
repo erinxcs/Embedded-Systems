@@ -1,32 +1,25 @@
-# Build artifacts and Arduino/VS Code clutter
+# Arduino and PlatformIO build output
+build/
+.pio/
 *.bin
 *.elf
 *.hex
 *.map
-build/
+*.log
+
+# IDE and operating-system files
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# Never commit credentials
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local credentials and environment files
 WiFiSecrets.h
 secrets.h
-.env
-.env.*
-
-# Generated local build/temp output
-.pio/
-.vscode/
-build/
-__pycache__/
-*.pyc
-*.elf
-*.bin
-*.map
-*.log
-# Do not publish credentials
-.env
-.env.*
-secrets.h
 credentials.h
+.env
+.env.*

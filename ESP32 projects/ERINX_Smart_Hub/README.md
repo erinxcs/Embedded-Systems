@@ -1,55 +1,107 @@
-# ERINX Smart Hub — Embedded Systems Mini Project
+# ERINX Smart Hub
 
-**Prepared by:** Carl Jayson Eli B. Bonaobra  
-**Section:** CPE4A  
-**Project:** Embedded Systems Mini Project  
-**Main hardware:** ESP32-S3 CAM N16R8, 3.5-inch SPI TFT touchscreen (ILI9488/XPT2046-type), DHT11, built-in microSD slot.  
-**Final source version:** V5.1.3 (archived final version; not freshly hardware-tested during reorganization).
+An ESP32-S3 touchscreen dashboard for weather, clock, indoor climate, photo viewing, silent video playback, and local wireless media management.
 
-## Start here
+![ERINX Smart Hub dashboard](assets/mockups/erinx_smart_hub_dashboard.png)
 
-1. Open `firmware/final/ERINX_Smart_Hub_V5_1_3_UI_Controls/ERINX_Smart_Hub_V5_1_3_UI_Controls.ino` in Arduino IDE.
-2. **Keep `PageTypes.h` in the SAME folder** as the `.ino` or Arduino compilation can fail.
-3. Choose **ESP32S3 Dev Module**, 16 MB flash and OPI PSRAM (match your working board configuration).
-4. Use your verified `TFT_eSPI/User_Setup.h` pin configuration. `hardware/configs/ERINX_V4_User_Setup.h` contains the preserved S3 baseline reference; do not overwrite an already working setup without checking.
-5. Install **TFT_eSPI, TJpg_Decoder, ArduinoJson v7, Adafruit DHT sensor library, and Adafruit Unified Sensor**. ESP32 platform includes WiFi, FS, SD_MMC, Preferences, HTTPClient.
-6. If you need example media, copy the **contents** of `sd_card/COPY_TO_SD_ROOT/` directly to the root of a compatible FAT32 microSD card in the ESP32-S3 camera board's **built-in** slot.
-7. Verify → Upload → calibrate touch on first run → Settings → Wi-Fi Setup → choose 2.4 GHz Wi-Fi → Weather.
+> **Current release:** V5.2 Wireless File Manager<br>
+> **Target hardware:** ESP32-S3 CAM N16R8, 3.5-inch 320x480 ILI9488/XPT2046 SPI touchscreen, DHT11, and built-in microSD<br>
+> **Project status:** source organized and statically reviewed; final Arduino compile and physical-device regression test still need to be recorded
 
-**Important:** Never copy the entire `sd_card` directory onto the card; copy the `icons`, `photos`, and `videos` folders contained in `COPY_TO_SD_ROOT` into the card root. Existing media can be retained. The `.evm` video format is custom and **silent**; ordinary `.mp4` files are not directly playable by the firmware.
+## Highlights
 
-## Organized repository map
+- Six-page touch interface: Weather, Clock, DHT11, Gallery, Video, and Settings.
+- Open-Meteo weather for four Batangas locations with saved city selection.
+- Philippine network time with an uptime fallback.
+- Local DHT11 temperature and humidity readings.
+- JPG gallery and custom silent `.evm` video playback from microSD.
+- On-device Wi-Fi scanning and touchscreen password entry.
+- Responsive local web file manager for uploading, browsing, and deleting media without removing the SD card.
+- Desktop utilities for converting photos and MP4 files into device-compatible formats.
 
-| Folder | Contents |
+## Quick start
+
+1. Open [`firmware/final/ERINX_Smart_Hub_V5_2/ERINX_Smart_Hub_V5_2.ino`](firmware/final/ERINX_Smart_Hub_V5_2/ERINX_Smart_Hub_V5_2.ino) in Arduino IDE.
+2. Keep `FileManager.h`, `FilePortal.h`, and `PageTypes.h` beside the `.ino` file.
+3. Select **ESP32S3 Dev Module**, **16 MB flash**, and **OPI PSRAM**.
+4. Install the required libraries listed below.
+5. Use the verified TFT_eSPI configuration from [`hardware/configs/`](hardware/configs/).
+6. Copy the contents of [`sd_card/COPY_TO_SD_ROOT/`](sd_card/COPY_TO_SD_ROOT/) to the root of a FAT32 microSD card.
+7. Verify, upload, calibrate touch if prompted, and connect to a 2.4 GHz Wi-Fi network from Settings.
+8. Reopen Settings and visit the displayed local `http://` address from a device on the same network.
+
+For detailed V5.2 setup and operational notes, see [`docs/releases/V5.2.md`](docs/releases/V5.2.md).
+
+## Dependencies
+
+Install these through Arduino Library Manager:
+
+- [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI)
+- [TJpg_Decoder](https://github.com/Bodmer/TJpg_Decoder)
+- ArduinoJson 7
+- DHT sensor library by Adafruit
+- Adafruit Unified Sensor
+
+WiFi, WebServer, Preferences, FS, HTTPClient, and SD_MMC are supplied by the Espressif ESP32 Arduino core.
+
+## Repository layout
+
+| Path | Purpose |
 |---|---|
-| `firmware/final/` | **V5.1.3** final sketch and matching `PageTypes.h` |
-| `firmware/development/ESP32D/` | Early weather and touchscreen software generations |
-| `firmware/development/ESP32S3/` | V4/V5 progressive feature versions |
-| `firmware/diagnostics/` | Display, touch, SDMMC and FPS test sketches |
-| `sd_card/COPY_TO_SD_ROOT/` | Deduplicated icon, JPG photo, silent EVM sample files |
-| `tools/photo_converter/` | PC JPG preparation utility |
-| `tools/video_converter/` | PC video to custom EVM conversion utility (FFmpeg/Pillow dependencies) |
-| `hardware/configs/` | TFT_eSPI settings for early ESP32D and later ESP32-S3 |
-| `assets/` | UI mockups, icon previews and editable vectors |
-| `docs/` | Documentation, setup instructions, source inventory and original release notes |
+| `firmware/final/ERINX_Smart_Hub_V5_2/` | Recommended firmware with wireless media management |
+| `firmware/final/ERINX_Smart_Hub_V5_1_3_UI_Controls/` | Previous stable UI release without the web file manager |
+| `firmware/development/` | Preserved ESP32D and ESP32-S3 development milestones |
+| `firmware/diagnostics/` | Display, touch, SDMMC, and FPS benchmark sketches |
+| `hardware/configs/` | Reference TFT_eSPI configurations |
+| `sd_card/COPY_TO_SD_ROOT/` | Deduplicated icons, sample photos, and EVM video |
+| `tools/photo_converter/` | Batch conversion to baseline JPEG |
+| `tools/video_converter/` | MP4-to-EVM conversion utility |
+| `assets/` | Dashboard mockups, icon sources, and web UI previews |
+| `docs/` | Hardware setup, development history, release notes, and test checklist |
 
-The contents were **moved, not refactored**. All original `.ino` source bytes are preserved. The final sketch is kept separate from historical and diagnostic sketches to avoid accidentally uploading an old version. Identical repeated SD media and copied notes are deduplicated; `docs/SOURCE_FILE_MANIFEST.csv` records each original path and its canonical destination. `PageTypes.h` is intentionally retained with every corresponding V5.1.x sketch to preserve independent Arduino compilation.
+## Release overview
 
-## Features in the final sketch
+| Version | Main addition | Location |
+|---|---|---|
+| V5.2 | Local responsive wireless file manager | `firmware/final/ERINX_Smart_Hub_V5_2/` |
+| V5.1.3 | Wi-Fi password SHOW/HIDE and improved city selector | `firmware/final/ERINX_Smart_Hub_V5_1_3_UI_Controls/` |
+| V5.1.2 | SDMMC target checks and board diagnostic | `firmware/development/` and `firmware/diagnostics/` |
+| V5.0 | Silent EVM video player | `firmware/development/ESP32S3/` |
+| V4.9 | JPEG photo gallery and slideshow | `firmware/development/ESP32S3/` |
+| V4.x | ESP32-S3 migration, icons, and UI refinements | `firmware/development/ESP32S3/` |
+| V1-V3 | Display, touch, weather, and dashboard prototypes | `firmware/development/ESP32D/` |
 
-- Six-menu touch home screen: Weather, Clock, DHT11, Gallery, Video, Settings.
-- Outdoor Open-Meteo forecast for Malvar, Tanauan, Lipa, Sto. Tomas; city selection stored in Preferences.
-- Local DHT11 readings via GPIO14; indoor readings are separate from API weather.
-- Philippine time using network NTP; uptime fallback if unsynchronized.
-- Internal SDMMC 1-bit microSD support, RGB565 icons, JPG photo browser/slideshow and custom silent `.evm` video playback.
-- Nearby Wi-Fi scan, on-screen password entry with SHOW/HIDE, saved Wi-Fi on device.
+The original folder-by-folder packages remain in [`../TFT project/`](../TFT%20project/) as a development archive. New users should start from this organized directory.
 
-## Limitations and publication notes
+## Media formats
 
-- The video player is silent; the ESP32-S3 CAM camera module is **not** used for taking photos in this version.
-- Open-Meteo requires internet, and the code uses `WiFiClientSecure::setInsecure()` for HTTPS. This is acceptable as a prototype tradeoff but should be improved before production use.
-- The current Wi-Fi password entry defaults to **visible**, and saved Wi-Fi credentials are in on-device NVS without an app-added encryption layer; hide sensitive passwords when demonstrating.
-- Board SPI/touch/power wiring depends on the exact TFT module and known-working connections. Power off before rewiring.
-- The archive review is a static structural/asset inventory, **not** an ESP32 board-toolchain compile or a physical hardware verification. Record real measurements/screenshots separately for the project paper.
+- **Photos:** baseline JPG/JPEG; 320x480 is recommended.
+- **Videos:** custom silent `.evm` containers generated by `tools/video_converter/convert_videos.py`.
+- **Not supported directly:** MP4 playback, progressive JPEG, and PNG display.
 
-See `docs/HARDWARE_AND_SETUP.md`, `docs/DEVELOPMENT_VERSIONS.md`, and `docs/TESTING_CHECKLIST.md` for details.
+Do not copy the `sd_card` directory itself to the card. Copy the `icons`, `photos`, and `videos` folders inside `COPY_TO_SD_ROOT` to the card root.
+
+## Security and limitations
+
+- The file manager is intended for a trusted home, school, or hotspot LAN. It uses local HTTP, not HTTPS.
+- Do not expose the ESP32 web server to the public internet or configure router port forwarding for it.
+- The access PIN changes at boot and is shown only on the physical Settings screen.
+- Saved Wi-Fi credentials live in ESP32 Preferences/NVS without an additional application-level encryption layer.
+- Open-Meteo HTTPS currently uses `WiFiClientSecure::setInsecure()`; certificate validation should be added before production deployment.
+- The video format is silent, and the camera module is not used for image capture.
+
+## Documentation
+
+- [Hardware and setup](docs/HARDWARE_AND_SETUP.md)
+- [Development versions](docs/DEVELOPMENT_VERSIONS.md)
+- [V5.2 release guide](docs/releases/V5.2.md)
+- [Testing checklist](docs/TESTING_CHECKLIST.md)
+- [Source-file manifest](docs/SOURCE_FILE_MANIFEST.csv)
+- [Changelog](CHANGELOG.md)
+
+## Author
+
+**Carl Jayson Eli B. Bonaobra**<br>
+CPE4A — Embedded Systems Mini Project
+
+No license has been selected yet. Until a license is added, normal copyright restrictions apply.

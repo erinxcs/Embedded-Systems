@@ -1,0 +1,16 @@
+* text=auto
+
+*.ino text eol=lf
+*.h text eol=lf
+*.cpp text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.csv text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.rgb565 binary
+*.evm binary
+*.docx binary
