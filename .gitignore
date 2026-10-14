@@ -1,0 +1,28 @@
+# Generated Arduino and PlatformIO output
+**/build/
+**/.pio/
+*.bin
+*.elf
+*.hex
+*.map
+*.log
+
+# Generated release archives
+*.zip
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Local credentials
+**/WiFiSecrets.h
+**/secrets.h
+**/credentials.h
+.env
+.env.*
