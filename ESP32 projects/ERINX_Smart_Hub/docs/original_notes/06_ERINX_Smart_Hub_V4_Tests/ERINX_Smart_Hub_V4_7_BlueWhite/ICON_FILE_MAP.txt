@@ -1,0 +1,6 @@
+weather.rgb565
+clock.rgb565
+dht11.rgb565
+gallery.rgb565
+video.rgb565
+settings.rgb565

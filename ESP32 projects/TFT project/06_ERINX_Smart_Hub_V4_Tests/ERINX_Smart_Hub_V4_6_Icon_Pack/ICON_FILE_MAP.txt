@@ -1,0 +1,8 @@
+# 40x40 RGB565 little endian files
+# Each .rgb565 is exactly 3200 bytes
+weather.rgb565  40x40   3200 bytes
+clock.rgb565  40x40   3200 bytes
+dht11.rgb565  40x40   3200 bytes
+gallery.rgb565  40x40   3200 bytes
+video.rgb565  40x40   3200 bytes
+settings.rgb565  40x40   3200 bytes

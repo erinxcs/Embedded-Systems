@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+ <defs><linearGradient id="a" x1="0%" y1="0%" x2="90%" y2="100%"><stop offset="0%" stop-color="#344e70"/><stop offset="100%" stop-color="#223247"/></linearGradient></defs>
+ <rect width="40" height="40" fill="#101429"/>
+ <rect x="1.8" y="1.8" width="36.4" height="36.4" rx="10" fill="url(#a)" stroke="#344e70" stroke-width="1"/>
+ <path d="M7 5.2Q20 1.6 33 7" stroke="#d6efff" opacity=".15" stroke-width="1.1" fill="none"/>
+ <polygon points="20.00,7.80 21.82,10.83 23.58,11.36 26.78,9.86 28.63,11.37 27.77,14.81 28.64,16.42 31.97,17.62 32.20,20.00 29.17,21.82 28.64,23.58 30.14,26.78 28.63,28.63 25.19,27.77 23.58,28.64 22.38,31.97 20.00,32.20 18.18,29.17 16.42,28.64 13.22,30.14 11.37,28.63 12.23,25.19 11.36,23.58 8.03,22.38 7.80,20.00 10.83,18.18 11.36,16.42 9.86,13.22 11.37,11.37 14.81,12.23 16.42,11.36 17.62,8.03" fill="#7d9bbb" stroke="#c6e3ff" stroke-width="1.2" stroke-linejoin="round"/>
+<circle cx="20" cy="20" r="5.9" fill="#182b4a" stroke="#c9e8ff" stroke-width="1.3"/>
+<circle cx="20" cy="20" r="2.35" fill="#88d6ff"/>
+ </svg>

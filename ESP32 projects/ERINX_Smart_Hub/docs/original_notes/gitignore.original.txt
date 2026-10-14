@@ -1,0 +1,16 @@
+# Build artifacts and Arduino/VS Code clutter
+*.bin
+*.elf
+*.hex
+*.map
+build/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never commit credentials
+WiFiSecrets.h
+secrets.h
+.env
+.env.*

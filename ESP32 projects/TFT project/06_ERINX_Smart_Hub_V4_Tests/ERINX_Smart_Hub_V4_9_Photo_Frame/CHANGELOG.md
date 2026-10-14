@@ -1,0 +1,1 @@
+V4.9: Adds Photo Gallery JPEG viewing from SD_MMC, full-screen portrait viewer, 7-second slideshow, touch navigation, UI overlay auto-hide, sample images, PC batch converter; preserves V4.8 UI and peripherals.

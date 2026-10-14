@@ -1,0 +1,32 @@
+# Build artifacts and Arduino/VS Code clutter
+*.bin
+*.elf
+*.hex
+*.map
+build/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Never commit credentials
+WiFiSecrets.h
+secrets.h
+.env
+.env.*
+
+# Generated local build/temp output
+.pio/
+.vscode/
+build/
+__pycache__/
+*.pyc
+*.elf
+*.bin
+*.map
+*.log
+# Do not publish credentials
+.env
+.env.*
+secrets.h
+credentials.h
