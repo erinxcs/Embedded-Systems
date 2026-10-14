@@ -10,7 +10,7 @@ Use the organized project at [`../ERINX_Smart_Hub/`](../ERINX_Smart_Hub/) for th
 |---|---|
 | Current V5.2 firmware | [`../ERINX_Smart_Hub/firmware/final/ERINX_Smart_Hub_V5_2/`](../ERINX_Smart_Hub/firmware/final/ERINX_Smart_Hub_V5_2/) |
 | Main project guide | [`../ERINX_Smart_Hub/README.md`](../ERINX_Smart_Hub/README.md) |
-| FPS benchmark | [`ERINX_V5_1_FPS_Benchmark/`](ERINX_V5_1_FPS_Benchmark/) |
+| FPS benchmark | [`ERINX_V5_1_FPS_Benchmark/README.md`](ERINX_V5_1_FPS_Benchmark/README.md) |
 | SDMMC diagnostic | [`ERINX_Smart_Hub_V5_1_2_SDMMC_DIAGNOSTIC/SDMMC_Board_Probe/`](ERINX_Smart_Hub_V5_1_2_SDMMC_DIAGNOSTIC/SDMMC_Board_Probe/) |
 | Early wiring notes | [`docs/WIRING.md`](docs/WIRING.md) |
 

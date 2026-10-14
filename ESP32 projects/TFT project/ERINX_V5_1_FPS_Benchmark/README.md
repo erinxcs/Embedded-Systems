@@ -59,3 +59,16 @@ Restore the last stable `SPI_FREQUENCY` immediately. Wiring stability and TFT dr
 ## Notes
 
 No need to alter microSD format again. This test is silent and not MP4 direct playback.
+
+## Record your measurements
+
+Use [`BENCHMARK_RESULTS.md`](BENCHMARK_RESULTS.md) to record the board configuration, library versions, SPI frequency, and measured timing for every run. Keep failed or unstable runs in the table as evidence instead of reporting only the fastest result.
+
+## Compile verification
+
+The benchmark passed Arduino CLI compilation on October 14, 2026 with ESP32 core 3.3.12, ESP32S3 Dev Module, 16 MB flash, QIO, a 3 MB application partition, and OPI PSRAM.
+
+- Program storage: 429,352 bytes (13%)
+- Dynamic memory: 27,320 bytes (8%)
+
+This confirms the source builds with the recorded toolchain; physical FPS and stability results must still be collected on the device.
