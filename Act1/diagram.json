@@ -20,7 +20,7 @@
     [ "led1:A", "r1:1", "green", [ "v0" ] ],
     [ "r1:2", "esp:2", "green", [ "v0" ] ],
     [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
-    [ "esp:5V", "pot1:VCC", "red", [ "h0" ] ],
+    [ "esp:3V3", "pot1:VCC", "red", [ "h0" ] ],
     [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
     [ "pot1:SIG", "esp:34", "green", [ "v0" ] ]
   ],
