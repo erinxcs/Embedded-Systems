@@ -19,8 +19,14 @@ The Smart Hub and other ESP32 projects now live in the [ESP32-Projects](https://
 
 | Path | Contents |
 |---|---|
-| `Act1/` to `Act4_2/` | Embedded-systems laboratory activities |
-| `Act3_3/` | DHT11 monitoring over Bluetooth Serial |
+| [`Act1/`](Act1/) | LED dimming controlled by a potentiometer |
+| [`Act2_1/`](Act2_1/) | LED control using Serial communication |
+| [`Act2_2/`](Act2_2/) | DHT11 monitoring using the Serial Monitor |
+| [`Act3_1/`](Act3_1/) | LED control via Bluetooth Serial |
+| [`Act3_2/`](Act3_2/) | Bluetooth master and slave communication |
+| [`Act3_3/`](Act3_3/) | DHT11 monitoring via Bluetooth Serial |
+| [`Act4_1/`](Act4_1/) | DHT22 monitoring on an SSD1306 OLED |
+| [`Act4_2/`](Act4_2/) | Volume control with an OLED and potentiometer |
 
 ## Notes
 
