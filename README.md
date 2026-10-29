@@ -4,28 +4,35 @@ A collection of Arduino and ESP32 coursework, hardware experiments, diagnostics,
 
 ## Featured project
 
-### [ERINX Smart Hub](ESP32%20projects/ERINX_Smart_Hub/)
+### [ERINX Smart Hub](https://github.com/erinxcs/ESP32-Projects/tree/main/ERINX%20Smart%20Hub)
 
 An ESP32-S3 touchscreen dashboard with weather, clock, DHT11 monitoring, a microSD photo gallery, silent EVM video playback, Wi-Fi setup, and a local wireless media manager.
 
-- [Project overview](ESP32%20projects/ERINX_Smart_Hub/README.md)
-- [Current V5.2 firmware](ESP32%20projects/ERINX_Smart_Hub/firmware/final/ERINX_Smart_Hub_V5_2/)
-- [Hardware and setup](ESP32%20projects/ERINX_Smart_Hub/docs/HARDWARE_AND_SETUP.md)
-- [Testing checklist](ESP32%20projects/ERINX_Smart_Hub/docs/TESTING_CHECKLIST.md)
+The Smart Hub and other ESP32 projects now live in the [ESP32-Projects](https://github.com/erinxcs/ESP32-Projects) repository.
+
+- [Project overview](https://github.com/erinxcs/ESP32-Projects/blob/main/ERINX%20Smart%20Hub/README.md)
+- [Current V5.1.3 firmware](https://github.com/erinxcs/ESP32-Projects/tree/main/ERINX%20Smart%20Hub/firmware/final/ERINX_Smart_Hub_V5_1_3_UI_Controls)
+- [Hardware and setup](https://github.com/erinxcs/ESP32-Projects/blob/main/ERINX%20Smart%20Hub/docs/HARDWARE_AND_SETUP.md)
+- [Testing checklist](https://github.com/erinxcs/ESP32-Projects/blob/main/ERINX%20Smart%20Hub/docs/TESTING_CHECKLIST.md)
 
 ## Repository map
 
 | Path | Contents |
 |---|---|
-| `ESP32 projects/ERINX_Smart_Hub/` | Organized current Smart Hub project |
-| `ESP32 projects/TFT project/` | Preserved TFT development archive and packaged milestones |
-| `Act1/` to `Act4_2/` | Earlier embedded-systems laboratory activities |
-| `Act3_3.ino` | Standalone activity sketch |
+| [`Act1/`](Act1/) | LED dimming controlled by a potentiometer |
+| [`Act2_1/`](Act2_1/) | LED control using Serial communication |
+| [`Act2_2/`](Act2_2/) | DHT11 monitoring using the Serial Monitor |
+| [`Act3_1/`](Act3_1/) | LED control via Bluetooth Serial |
+| [`Act3_2/`](Act3_2/) | Bluetooth master and slave communication |
+| [`Act3_3/`](Act3_3/) | DHT11 monitoring via Bluetooth Serial |
+| [`Act4_1/`](Act4_1/) | DHT22 monitoring on an SSD1306 OLED |
+| [`Act4_2/`](Act4_2/) | Volume control with an OLED and potentiometer |
 
 ## Notes
 
 - Hardware-specific sketches may require matching board settings, libraries, pin configuration, and peripherals.
 - Review each project's README before uploading firmware.
+- Compiled `build/` output is not committed. Compile a sketch in the Arduino IDE before running its Wokwi simulation.
 - Credentials and local environment files should never be committed.
 - No repository-wide license has been selected yet.
 
